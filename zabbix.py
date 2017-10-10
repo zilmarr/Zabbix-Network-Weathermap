@@ -63,7 +63,7 @@ class ZabbixAgent(object):
         if len(item_out_data) > 1:
             raise ZbxException('return items expected one item: {}'.format(item_out_data))
 
-        return int(item_in_data[0]['lastvalue']), int(item_out_data[0]['lastvalue'])
+        return float(item_in_data[0]['lastvalue']), float(item_out_data[0]['lastvalue'])
 
     def api_ver(self):
         return self.zbx_api.api_version()
